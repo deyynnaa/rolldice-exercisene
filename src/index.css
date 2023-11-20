@@ -1,13 +1,93 @@
+/* Resetting default styles */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("../public/casino.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* General styling for the Rolldice component */
+.Rolldice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.roll-container {
+  border: 2px solid black;
+}
+
+/* Styling for the container holding the dice */
+.Rolldice-container {
+  background-color: rgba(255, 255, 255, 0.568);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 2em;
+}
+
+/* Styling for the roll button */
+.Rolldice button {
+  width: 15em;
+  padding: 1.5em;
+  border-radius: 40px;
+  color: black;
+  background-color: white;
+  margin-top: 3em;
+  align-self: center;
+  cursor: pointer;
+}
+
+.Button-container {
+  margin-top: 1em; /* Adjust the margin as needed */
+}
+
+/* Styling for each Die */
+.Die {
+  font-size: 15em;
+  padding: 0.25em;
+  color: rgb(240, 56, 56);
+}
+
+/*shaking effect on the Die */
+.Die-shaking {
+  animation-name: wobble;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* Keyframes for the wobble animation */
+@keyframes wobble {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+  15% {
+    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+  }
+  30% {
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+  45% {
+    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+  60% {
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+  75% {
+    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+  }
 }
