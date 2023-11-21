@@ -12,7 +12,7 @@ class Rolldice extends Component {
     // States
     this.state = {
       die1: "one",
-      die2: "two",
+      die2: "one",
       rolling: false,
     };
     this.roll = this.roll.bind(this);
@@ -46,7 +46,7 @@ class Rolldice extends Component {
             disabled={this.state.rolling}
             onClick={this.roll}
           >
-            {this.state.rolling ? "Rolling" : "Roll Dice!"}
+            {this.state.rolling ? "Rolling!" : "Roll Dice!"}
           </button>
         </div>
       </div>
